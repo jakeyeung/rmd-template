@@ -31,7 +31,6 @@ $endif$
 \fi
 
 % ----- Jake customizations ------------- %
-\setbeamertemplate{footline}[frame number]
 \newcommand{\columnsbegin}{\begin{columns}}
 \newcommand{\columnsend}{\end{columns}}
 % Appendix commands
@@ -42,6 +41,41 @@ $endif$
 \newcommand{\backupend}{
    \addtocounter{framenumberappendix}{-\value{framenumber}}
    \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[]{palette quaternary}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{}
+    \end{beamercolorbox}%
+  }
+}
+
+% \setbeamertemplate{footline}[frame number]{
+\setbeamertemplate{footline}{
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{palette quaternary}%
+      \usebeamerfont{author in head/foot}Naef Lab\hfill\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{palette quaternary}%
+      \usebeamerfont{title in head/foot}\insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber
+    \end{beamercolorbox}%
+  }
+}
+% \defbeamertemplate*{footline}{shadow theme}
+% {%
+%   \leavevmode%
+%   \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+%     \usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshorttitle%
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+% }
+
 % ------ End Jake customizations ------- %
 
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
